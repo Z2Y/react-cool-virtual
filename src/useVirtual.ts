@@ -161,7 +161,7 @@ export default <
       const oStop = Math.min(vStop + overscanCount, lastIdx);
       const innerMargin = msData[oStart].start;
       const totalSize = Math[oStop < lastIdx ? "max" : "min"](
-        msData[oStop].end + msData[oStop].size,
+        msData[oStop].end + msData[oStop < lastIdx ? oStop + 1 : oStop].size,
         msData[lastIdx].end
       );
 
